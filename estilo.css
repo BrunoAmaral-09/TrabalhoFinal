@@ -1,0 +1,2089 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Montserrat:wght@500;600;700;800&display=swap');
+
+:root {
+    --background: #090913;
+    --panel: #12121d;
+    --purple: #a855f7;
+    --cyan: #26d9da;
+    --text: #f7f7fb;
+    --muted: #9a9aaa;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    color: #fff;
+    background: rgba(168, 85, 247, 0.55);
+}
+
+button,
+a,
+input {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+    transition:
+        color 0.18s ease,
+        border-color 0.18s ease,
+        background 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.18s ease;
+}
+
+:focus-visible {
+    outline: 3px solid rgba(38, 217, 218, 0.72);
+    outline-offset: 3px;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--text);
+    font-family: "Montserrat", sans-serif;
+    background:
+        radial-gradient(circle at 78% 18%, rgba(123, 59, 212, 0.12), transparent 22rem),
+        linear-gradient(135deg, #090912 0%, #0d0d19 100%);
+}
+
+.glow {
+    position: fixed;
+    z-index: -1;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    filter: blur(110px);
+    opacity: 0.15;
+}
+
+.glow-one {
+    right: -100px;
+    top: 100px;
+    background: #ae50ff;
+}
+
+.glow-two {
+    left: 20%;
+    bottom: -170px;
+    background: #00ced1;
+}
+
+.navbar {
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+.brand-mark {
+    width: 42px;
+    height: 42px;
+    display: block;
+    object-fit: contain;
+    border: 2px solid var(--purple);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+    transform: rotate(-5deg);
+}
+
+.profile-menu {
+    position: relative;
+}
+
+.profile-button {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 2px solid rgba(168, 85, 247, 0.8);
+    border-radius: 50%;
+    color: #fff;
+    background: linear-gradient(135deg, #b35df7, #5d35a8);
+    box-shadow: 0 0 22px rgba(168, 85, 247, 0.26);
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.profile-dropdown {
+    position: absolute;
+    z-index: 20;
+    top: 54px;
+    right: 0;
+    width: 210px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    background: rgba(18, 18, 29, 0.98);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.38);
+}
+
+.profile-dropdown strong,
+.profile-dropdown span {
+    display: block;
+}
+
+.profile-dropdown strong {
+    margin-bottom: 4px;
+    font-size: 13px;
+}
+
+.profile-dropdown span {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.profile-dropdown button {
+    width: 100%;
+    height: 36px;
+    margin-top: 12px;
+    border: 1px solid rgba(168, 85, 247, 0.28);
+    border-radius: 8px;
+    color: #fff;
+    background: rgba(168, 85, 247, 0.14);
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.profile-dropdown button:hover {
+    border-color: rgba(168, 85, 247, 0.58);
+    background: rgba(168, 85, 247, 0.22);
+}
+
+.game-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 38px;
+}
+
+nav a {
+    position: relative;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: #fff;
+}
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 3px;
+    left: 50%;
+    bottom: -13px;
+    border-radius: 10px;
+    background: var(--purple);
+    transform: translateX(-50%);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.profile strong,
+.profile span {
+    display: block;
+}
+
+.profile strong {
+    font-size: 12px;
+}
+
+.profile span {
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.icon-button,
+.avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+}
+
+.icon-button {
+    border: 1px solid #29293a;
+    color: var(--purple);
+    background: #151521;
+    cursor: pointer;
+}
+
+.avatar {
+    display: grid;
+    place-items: center;
+    margin-left: 4px;
+    background: linear-gradient(135deg, #bb67ff, #6335bd);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+main {
+    max-width: 1180px;
+    margin: 18px auto 0;
+    padding: 0 24px 50px;
+}
+
+.hero {
+    position: relative;
+    height: min(680px, calc(100vh - 128px));
+    min-height: 440px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 22px;
+    background:
+        linear-gradient(90deg, rgba(14, 12, 28, 0.98) 0%, rgba(20, 17, 42, 0.88) 48%, rgba(20, 16, 43, 0.18) 100%),
+        radial-gradient(circle at 82% 55%, #7741ac 0, #281d50 30%, #151329 62%);
+    box-shadow: 0 26px 70px rgba(0, 0, 0, 0.32);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(168, 85, 247, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(168, 85, 247, 0.055) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(90deg, transparent 35%, black);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    width: 48%;
+    padding: clamp(55px, 12vh, 130px) 0 0 66px;
+}
+
+.eyebrow {
+    color: var(--purple);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    margin: 12px 0 10px;
+    font-family: "Black Ops One", "Montserrat", sans-serif;
+    font-size: clamp(50px, 6vw, 74px);
+    line-height: 0.82;
+    letter-spacing: -3px;
+    text-shadow: 7px 7px 0 rgba(133, 66, 201, 0.22);
+}
+
+.hero p {
+    max-width: 350px;
+    margin: 18px 0 24px;
+    color: #c1bfd0;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.primary-button,
+.secondary-button,
+.card-info button {
+    border: none;
+    cursor: pointer;
+}
+
+.primary-button {
+    height: 44px;
+    min-width: 144px;
+    border-radius: 8px;
+    color: #fff;
+    background: linear-gradient(135deg, #b35df7, #803cce);
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 0 12px 28px rgba(168, 85, 247, 0.25);
+}
+
+.secondary-button {
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 8px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+    font-size: 20px;
+}
+
+.hero-art {
+    position: absolute;
+    inset: 0 0 0 45%;
+}
+
+.cyber-sphere {
+    position: absolute;
+    width: 290px;
+    height: 290px;
+    right: 70px;
+    top: 28px;
+    border: 1px solid rgba(227, 183, 255, 0.28);
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 42% 38%, rgba(235, 189, 255, 0.9), rgba(178, 101, 231, 0.55) 7%, transparent 8%),
+        radial-gradient(circle at 52% 48%, #b16af0 0, #5d378f 32%, #20153d 63%, transparent 64%);
+    box-shadow:
+        inset -28px -20px 60px rgba(22, 13, 50, 0.8),
+        0 0 70px rgba(173, 88, 240, 0.26);
+}
+
+.sphere-ring {
+    position: absolute;
+    width: 360px;
+    height: 110px;
+    left: -35px;
+    top: 90px;
+    border: 2px solid rgba(225, 174, 255, 0.32);
+    border-radius: 50%;
+    transform: rotate(-18deg);
+}
+
+.speed-line {
+    position: absolute;
+    z-index: 2;
+    height: 2px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, transparent, #d7a4ff);
+    filter: drop-shadow(0 0 6px #b869e9);
+    transform: rotate(-18deg);
+}
+
+.line-one {
+    width: 260px;
+    right: 240px;
+    top: 155px;
+}
+
+.line-two {
+    width: 190px;
+    right: 20px;
+    bottom: 50px;
+}
+
+.games-section {
+    padding-top: 34px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.section-heading h2 {
+    margin: 6px 0 0;
+    font-size: 20px;
+}
+
+.text-button {
+    border: none;
+    color: #aaa8b7;
+    background: transparent;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.text-button span {
+    margin-left: 6px;
+    color: var(--purple);
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.game-grid .game-card:first-child,
+.game-grid .game-card:nth-child(2) {
+    min-height: 188px;
+}
+
+.game-card {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.055);
+    border-radius: 14px;
+    background: var(--panel);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(168, 85, 247, 0.35);
+}
+
+.card-art {
+    position: relative;
+    height: 120px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.card-art::before,
+.card-art::after {
+    content: "";
+    position: absolute;
+}
+
+.card-purple .card-art {
+    background:
+        radial-gradient(circle at 55% 110%, #be77dd 0, transparent 45%),
+        linear-gradient(135deg, #17132e, #53316d);
+}
+
+.card-cyan .card-art {
+    background:
+        linear-gradient(145deg, transparent 55%, rgba(96, 248, 242, 0.18)),
+        linear-gradient(135deg, #102331, #16495a);
+}
+
+.card-red .card-art {
+    background:
+        radial-gradient(circle at 50% 120%, #e24e61 0, transparent 48%),
+        linear-gradient(135deg, #26151e, #702839);
+}
+
+.card-art::before {
+    width: 150%;
+    height: 70%;
+    bottom: -62%;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    opacity: 0.25;
+}
+
+.game-logo {
+    position: relative;
+    z-index: 2;
+    font-family: "Black Ops One", "Montserrat", sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+.game-tag {
+    position: absolute;
+    z-index: 3;
+    top: 12px;
+    right: 12px;
+    padding: 5px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    background: rgba(8, 8, 16, 0.45);
+    font-size: 8px;
+    text-transform: uppercase;
+}
+
+.card-info {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px 0 16px;
+}
+
+.card-info h3 {
+    margin: 0 0 5px;
+    font-size: 12px;
+}
+
+.card-info p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.card-info button {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #29293a;
+    border-radius: 50%;
+    color: #fff;
+    background: #1b1b28;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+@media (max-width: 800px) {
+    .hero {
+        height: min(680px, calc(100vh - 110px));
+        min-height: 440px;
+    }
+
+    .hero-content {
+        width: 70%;
+        padding: 45px 0 0 35px;
+    }
+
+    .hero-art {
+        left: 55%;
+        opacity: 0.75;
+    }
+
+    .cyber-sphere {
+        right: -80px;
+    }
+
+    .game-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.favorite-button[aria-pressed="true"] {
+    border-color: rgba(248, 91, 150, 0.55);
+    color: #ff6d9e;
+    background: rgba(248, 91, 150, 0.12);
+}
+
+.notification-popover {
+    position: absolute;
+    z-index: 5;
+    top: 68px;
+    right: max(calc((100vw - 1180px) / 2 + 82px), 24px);
+    width: 260px;
+    padding: 16px;
+    border: 1px solid #29293a;
+    border-radius: 12px;
+    background: #151521;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.notification-popover strong {
+    font-size: 12px;
+}
+
+.notification-popover p {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.game-dialog {
+    width: min(420px, calc(100% - 32px));
+    padding: 34px;
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    border-radius: 18px;
+    color: var(--text);
+    background: #151420;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+}
+
+.game-dialog::backdrop {
+    background: rgba(5, 5, 12, 0.78);
+    backdrop-filter: blur(5px);
+}
+
+.game-dialog h2 {
+    margin: 12px 0 8px;
+    font-size: 25px;
+}
+
+.game-dialog p {
+    margin: 0 0 22px;
+    color: #b6b4c3;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.dialog-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    border: 0;
+    color: #aaa8b7;
+    background: transparent;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.game-dialog .dialog-confirm {
+    width: 100%;
+}
+
+.registration-dialog h2 {
+    margin-bottom: 8px;
+}
+
+.registration-form {
+    display: grid;
+    gap: 9px;
+}
+
+.registration-form label {
+    margin-top: 5px;
+    color: #d7d5e0;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.registration-form input {
+    width: 100%;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #343344;
+    border-radius: 7px;
+    outline: 0;
+    color: var(--text);
+    background: #0e0e18;
+    font: inherit;
+    font-size: 12px;
+}
+
+.registration-form input:focus {
+    border-color: var(--purple);
+}
+
+.registration-form .dialog-confirm {
+    margin-top: 10px;
+}
+
+.registration-error {
+    margin: 4px 0 0;
+    color: #ff829b;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.registration-main {
+    min-height: calc(100vh - 106px);
+    display: grid;
+    place-items: center;
+    padding: 28px 20px 56px;
+}
+
+.registration-card {
+    position: relative;
+    isolation: isolate;
+    width: min(440px, 100%);
+    padding: 36px;
+    border: 1px solid rgba(168, 85, 247, 0.24);
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at 100% 0, rgba(168, 85, 247, 0.14), transparent 16rem),
+        rgba(18, 18, 29, 0.94);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.38);
+}
+
+.registration-card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.16), transparent 38%, rgba(38, 217, 218, 0.08));
+    pointer-events: none;
+}
+
+.registration-snake {
+    width: 76px;
+    height: 54px;
+    display: block;
+    margin-bottom: 12px;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.registration-card h1 {
+    margin: 10px 0 8px;
+    font-family: "Black Ops One", "Montserrat", sans-serif;
+    font-size: clamp(24px, 6vw, 32px);
+}
+
+.registration-intro {
+    margin: 0 0 22px;
+    color: #b6b4c3;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.registration-note {
+    margin: 16px 0 0;
+    color: var(--muted);
+    font-size: 9px;
+    text-align: center;
+}
+
+.auth-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin: 0 0 18px;
+    padding: 4px;
+    border: 1px solid #29293a;
+    border-radius: 9px;
+    background: #0e0e18;
+}
+
+.auth-tab {
+    min-height: 36px;
+    border: 0;
+    border-radius: 6px;
+    color: var(--muted);
+    background: transparent;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.auth-tab.active {
+    color: #fff;
+    background: linear-gradient(135deg, #7136b5, #492477);
+    box-shadow: 0 4px 14px rgba(112, 54, 181, 0.2);
+}
+
+.auth-panel[hidden],
+#auth-error[hidden] {
+    display: none;
+}
+
+#auth-error {
+    margin-top: 12px;
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0 16px;
+    }
+
+    .profile {
+        gap: 7px;
+    }
+
+    .profile > div:last-child {
+        display: none;
+    }
+
+    main {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .hero {
+        height: min(650px, calc(100vh - 110px));
+        min-height: 440px;
+    }
+
+    .hero-content {
+        width: 85%;
+        padding-left: 24px;
+    }
+
+    .hero-art {
+        left: 48%;
+        opacity: 0.45;
+    }
+
+    .cyber-sphere {
+        width: 220px;
+        height: 220px;
+        right: -100px;
+        top: 70px;
+    }
+
+    .sphere-ring {
+        width: 270px;
+        height: 85px;
+        top: 68px;
+    }
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.subpage-main {
+    max-width: 1180px;
+    margin: 18px auto 0;
+    padding: 0 24px 60px;
+}
+
+.shop-hero {
+    min-height: 270px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 38px 54px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 22px;
+    background:
+        linear-gradient(90deg, rgba(15, 13, 30, 0.98) 0%, rgba(15, 13, 30, 0.86) 53%, rgba(15, 13, 30, 0.2) 100%),
+        radial-gradient(circle at 82% 55%, #783caa, #24183f 54%, #151329);
+}
+
+.shop-hero h1 {
+    margin: 12px 0;
+    font-family: "Black Ops One", "Montserrat", sans-serif;
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.05;
+}
+
+.shop-hero p,
+.community-banner > p {
+    max-width: 440px;
+    color: #c1bfd0;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.shop-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+    text-decoration: none;
+}
+
+.shop-hero-art {
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    right: 12%;
+    top: 50%;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(228, 185, 255, 0.3);
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 35%, #c780f0, #713c9a 35%, #221637 68%);
+    box-shadow: inset -25px -20px 50px #100d20, 0 0 65px rgba(168, 85, 247, 0.3);
+    transform: translateY(-50%) rotate(-12deg);
+}
+
+.shop-hero-art::before,
+.shop-hero-art::after {
+    content: "";
+    position: absolute;
+    width: 340px;
+    height: 85px;
+    border: 2px solid rgba(228, 185, 255, 0.34);
+    border-radius: 50%;
+    transform: rotate(25deg);
+}
+
+.shop-hero-art::after {
+    width: 400px;
+    height: 115px;
+    opacity: 0.5;
+    transform: rotate(-20deg);
+}
+
+.shop-hero-art span {
+    z-index: 1;
+    font-family: "Black Ops One", sans-serif;
+    font-size: 33px;
+    line-height: 0.95;
+    text-align: center;
+    text-shadow: 0 4px 20px #21102e;
+    transform: rotate(12deg);
+}
+
+.shop-section {
+    padding-top: 36px;
+}
+
+.shop-heading {
+    align-items: center;
+}
+
+.shop-search {
+    width: min(280px, 45%);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 12px;
+    border: 1px solid #29293a;
+    border-radius: 8px;
+    color: var(--muted);
+    background: #12121d;
+}
+
+.shop-search input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    color: var(--text);
+    background: transparent;
+    font: inherit;
+    font-size: 11px;
+}
+
+.shop-search:focus-within {
+    border-color: var(--purple);
+}
+
+.shop-filters {
+    display: flex;
+    gap: 9px;
+    margin: 0 0 18px;
+    overflow-x: auto;
+}
+
+.filter-chip {
+    padding: 9px 14px;
+    border: 1px solid #29293a;
+    border-radius: 20px;
+    color: #aaa8b7;
+    background: #12121d;
+    font-family: inherit;
+    font-size: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.filter-chip.active,
+.filter-chip:hover {
+    border-color: var(--purple);
+    color: #fff;
+    background: rgba(168, 85, 247, 0.13);
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.shop-card {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    background: var(--panel);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.shop-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(168, 85, 247, 0.4);
+}
+
+.shop-card-art {
+    height: 148px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.shop-card-art .game-logo {
+    font-size: 32px;
+}
+
+.shop-card-body {
+    padding: 14px;
+}
+
+.product-category {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.shop-card-body h3 {
+    margin: 7px 0 15px;
+    font-size: 14px;
+}
+
+.product-buy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.product-buy strong {
+    font-size: 12px;
+}
+
+.add-cart-button {
+    padding: 9px 12px;
+    border: 1px solid rgba(168, 85, 247, 0.45);
+    border-radius: 7px;
+    color: #e5c7ff;
+    background: rgba(168, 85, 247, 0.12);
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.add-cart-button:hover {
+    color: #fff;
+    background: #803cce;
+}
+
+.empty-search {
+    padding: 24px;
+    border: 1px dashed #343344;
+    border-radius: 12px;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+}
+
+.cart-button {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 10px;
+    border: 1px solid #29293a;
+    border-radius: 20px;
+    color: #d7d5e0;
+    font-size: 10px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.cart-count {
+    min-width: 18px;
+    height: 18px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: white;
+    background: #803cce;
+    font-size: 9px;
+}
+
+.cart-dialog .cart-message {
+    overflow-wrap: anywhere;
+}
+
+.community-banner {
+    padding: 34px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at 88% 18%, rgba(168, 85, 247, 0.25), transparent 19rem),
+        linear-gradient(120deg, #171327, #11111d 70%);
+}
+
+.community-banner h1 {
+    margin: 10px 0 0;
+    font-family: "Black Ops One", "Montserrat", sans-serif;
+    font-size: clamp(30px, 5vw, 48px);
+}
+
+.community-stats {
+    display: flex;
+    gap: 38px;
+    margin-top: 24px;
+}
+
+.community-stats strong,
+.community-stats span {
+    display: block;
+}
+
+.community-stats strong {
+    font-size: 17px;
+}
+
+.community-stats span {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.community-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(250px, 0.8fr);
+    align-items: start;
+    gap: 20px;
+    padding-top: 26px;
+}
+
+.feed-column,
+.community-sidebar {
+    min-width: 0;
+}
+
+.post-composer,
+.feed-post,
+.sidebar-panel {
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 13px;
+    background: #12121d;
+}
+
+.post-composer {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 12px;
+    padding: 16px;
+}
+
+.composer-avatar,
+.post-avatar,
+.group-icon {
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: white;
+    background: linear-gradient(135deg, #bb67ff, #6335bd);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.composer-avatar,
+.post-avatar {
+    width: 38px;
+    height: 38px;
+}
+
+.post-composer textarea {
+    width: 100%;
+    min-height: 62px;
+    resize: vertical;
+    border: 0;
+    outline: 0;
+    color: var(--text);
+    background: transparent;
+    font: inherit;
+    font-size: 12px;
+}
+
+.post-composer textarea::placeholder,
+.comment-form input::placeholder {
+    color: #777687;
+}
+
+.composer-footer {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.character-count {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.composer-footer .primary-button {
+    min-width: 100px;
+    height: 36px;
+    font-size: 10px;
+}
+
+.feed-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 24px 0 12px;
+}
+
+.feed-toolbar h2,
+.sidebar-title h2 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.feed-tabs {
+    display: flex;
+    gap: 5px;
+}
+
+.feed-tab {
+    padding: 7px 10px;
+    border: 0;
+    border-radius: 6px;
+    color: var(--muted);
+    background: transparent;
+    font-family: inherit;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.feed-tab.active {
+    color: #fff;
+    background: #252334;
+}
+
+.feed-list {
+    display: grid;
+    gap: 14px;
+}
+
+.feed-post {
+    padding: 16px;
+}
+
+.post-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-heading > div:nth-child(2) {
+    flex: 1;
+}
+
+.post-heading strong,
+.post-heading span,
+.group-item strong,
+.group-item span {
+    display: block;
+}
+
+.post-heading strong,
+.group-item strong {
+    font-size: 11px;
+}
+
+.post-heading span,
+.group-item span {
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.avatar-violet {
+    background: linear-gradient(135deg, #ec70bc, #7438b8);
+}
+
+.avatar-cyan {
+    background: linear-gradient(135deg, #53e3d4, #176b9b);
+}
+
+.follow-button {
+    padding: 7px 10px;
+    border: 1px solid rgba(168, 85, 247, 0.45);
+    border-radius: 16px;
+    color: #d7b4ff;
+    background: transparent;
+    font-family: inherit;
+    font-size: 9px;
+    cursor: pointer;
+}
+
+.follow-button.following {
+    border-color: #343344;
+    color: #aaa8b7;
+}
+
+.feed-post > p {
+    margin: 14px 0;
+    color: #d0ceda;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.post-game-art {
+    height: 150px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 9px;
+    background:
+        radial-gradient(circle at 55% 110%, #be77dd 0, transparent 45%),
+        linear-gradient(135deg, #17132e, #53316d);
+}
+
+.post-game-art .game-logo {
+    font-size: 24px;
+}
+
+.post-actions {
+    display: flex;
+    gap: 18px;
+    padding-top: 12px;
+}
+
+.post-actions button {
+    border: 0;
+    color: var(--muted);
+    background: transparent;
+    font-family: inherit;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.post-actions .like-button[aria-pressed="true"] {
+    color: #ff6d9e;
+}
+
+.comment-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.comment-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 9px 10px;
+    border: 1px solid #302f40;
+    border-radius: 7px;
+    outline: 0;
+    color: var(--text);
+    background: #0e0e18;
+    font: inherit;
+    font-size: 10px;
+}
+
+.comment-form input:focus {
+    border-color: var(--purple);
+}
+
+.comment-form button {
+    padding: 0 12px;
+    border: 0;
+    border-radius: 7px;
+    color: white;
+    background: #7136b5;
+    font-family: inherit;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.comment-item {
+    margin: 10px 0 0;
+    padding: 9px 10px;
+    border-radius: 7px;
+    color: #cfccda;
+    background: #1a1926;
+    font-size: 10px;
+}
+
+.comment-item strong {
+    color: #e6cfff;
+}
+
+.community-sidebar {
+    display: grid;
+    gap: 14px;
+}
+
+.sidebar-panel {
+    padding: 16px;
+}
+
+.sidebar-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.sidebar-title > span {
+    color: var(--muted);
+    letter-spacing: 2px;
+}
+
+.group-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 11px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.group-item > div:nth-child(2) {
+    flex: 1;
+}
+
+.group-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    font-size: 9px;
+}
+
+.group-purple {
+    background: linear-gradient(135deg, #aa5ae7, #542b87);
+}
+
+.group-cyan {
+    background: linear-gradient(135deg, #44d3cb, #22628a);
+}
+
+.group-red {
+    background: linear-gradient(135deg, #e96570, #803342);
+}
+
+.join-button {
+    width: 27px;
+    height: 27px;
+    border: 1px solid #393749;
+    border-radius: 50%;
+    color: #d5b3ff;
+    background: #1b1a28;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.join-button[aria-pressed="true"] {
+    border-color: #7541a9;
+    color: white;
+    background: #7136b5;
+    font-size: 12px;
+}
+
+.event-panel {
+    background:
+        radial-gradient(circle at 100% 0, rgba(38, 217, 218, 0.1), transparent 12rem),
+        #12121d;
+}
+
+.event-panel h2 {
+    margin: 10px 0 5px;
+    font-size: 16px;
+}
+
+.event-panel p {
+    margin: 0 0 13px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.event-button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(38, 217, 218, 0.35);
+    border-radius: 7px;
+    color: #9af4ee;
+    background: rgba(38, 217, 218, 0.08);
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.event-button[aria-pressed="true"] {
+    color: #10131b;
+    background: var(--cyan);
+}
+
+.event-attendees {
+    display: block;
+    margin-top: 9px;
+    color: var(--muted);
+    font-size: 9px;
+    text-align: center;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+.snake-navbar {
+    justify-content: space-between;
+}
+
+.back-link {
+    color: #c1bfd0;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: #fff;
+}
+
+.snake-main {
+    width: min(820px, 100%);
+    margin: 16px auto 0;
+    padding: 0 24px 50px;
+}
+
+.snake-panel {
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    background: rgba(18, 18, 29, 0.88);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.28);
+}
+
+.snake-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.snake-heading h1 {
+    margin: 8px 0 5px;
+    font-family: "Black Ops One", "Montserrat", sans-serif;
+    font-size: clamp(24px, 5vw, 36px);
+}
+
+.snake-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.snake-title-gif {
+    width: 52px;
+    height: 40px;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.player-welcome {
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.snake-scores {
+    display: flex;
+    gap: 10px;
+}
+
+.snake-scores div {
+    min-width: 75px;
+    padding: 10px;
+    border: 1px solid #29293a;
+    border-radius: 9px;
+    background: #0e0e18;
+    text-align: center;
+}
+
+.snake-scores span,
+.snake-scores strong {
+    display: block;
+}
+
+.snake-scores span {
+    color: var(--muted);
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+.snake-scores strong {
+    margin-top: 4px;
+    color: #d8aaff;
+    font-size: 18px;
+}
+
+.canvas-wrap {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(168, 85, 247, 0.28);
+    border-radius: 11px;
+    background: #0b0b16;
+}
+
+#snake-canvas {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 3 / 2;
+}
+
+.game-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    background: rgba(8, 8, 18, 0.78);
+    text-align: center;
+    backdrop-filter: blur(3px);
+}
+
+.game-overlay[hidden] {
+    display: none;
+}
+
+.overlay-icon {
+    width: 72px;
+    height: 48px;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.game-overlay h2 {
+    margin: 8px 0;
+    font-size: clamp(18px, 4vw, 24px);
+}
+
+.game-overlay p {
+    max-width: 370px;
+    margin: 0 0 18px;
+    color: #c1bfd0;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.game-controls {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding-top: 14px;
+}
+
+.game-controls p {
+    flex: 1;
+    margin: 0;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.game-controls kbd {
+    padding: 3px 5px;
+    border: 1px solid #343344;
+    border-radius: 4px;
+    color: #d8aaff;
+    background: #1a1926;
+    font: inherit;
+}
+
+.game-controls .secondary-button {
+    width: auto;
+    height: 34px;
+    padding: 0 11px;
+    font-size: 10px;
+}
+
+.game-controls button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.touch-controls {
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 18px;
+}
+
+.touch-controls > div {
+    display: flex;
+    gap: 6px;
+}
+
+.touch-controls button {
+    width: 48px;
+    height: 42px;
+    border: 1px solid #393749;
+    border-radius: 8px;
+    color: #e6cfff;
+    background: #1a1926;
+    font-size: 18px;
+    touch-action: manipulation;
+}
+
+.tic-tac-toe-main {
+    width: min(760px, 100%);
+    margin: 16px auto 0;
+    padding: 0 24px 50px;
+}
+
+.tic-tac-toe-panel {
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    background: rgba(18, 18, 29, 0.88);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.28);
+}
+
+.tic-tac-toe-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.tic-tac-toe-heading h1 {
+    margin: 8px 0 5px;
+    font-family: "Black Ops One", "Montserrat", sans-serif;
+    font-size: clamp(24px, 5vw, 36px);
+}
+
+.tic-tac-toe-scores {
+    display: flex;
+    gap: 8px;
+}
+
+.tic-tac-toe-scores div {
+    min-width: 82px;
+    padding: 9px;
+    border: 1px solid #29293a;
+    border-radius: 9px;
+    background: #0e0e18;
+    text-align: center;
+}
+
+.tic-tac-toe-scores span,
+.tic-tac-toe-scores strong {
+    display: block;
+}
+
+.tic-tac-toe-scores span {
+    color: var(--muted);
+    font-size: 8px;
+}
+
+.tic-tac-toe-scores strong {
+    margin-top: 4px;
+    color: #e6cfff;
+    font-size: 18px;
+}
+
+.tic-tac-toe-status {
+    margin: 0 0 14px;
+    color: #d8aaff;
+    font-size: 13px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.tic-tac-toe-board {
+    width: min(420px, 100%);
+    aspect-ratio: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 0 auto;
+}
+
+.tic-tac-toe-board button {
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(168, 85, 247, 0.22);
+    border-radius: 12px;
+    color: #fff;
+    background:
+        linear-gradient(145deg, rgba(168, 85, 247, 0.09), transparent),
+        #11111d;
+    font-family: "Black Ops One", "Montserrat", sans-serif;
+    font-size: clamp(42px, 12vw, 76px);
+    cursor: pointer;
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.tic-tac-toe-board button:hover {
+    border-color: rgba(168, 85, 247, 0.55);
+    background:
+        linear-gradient(145deg, rgba(168, 85, 247, 0.16), transparent),
+        #151522;
+}
+
+.tic-tac-toe-board button.cell-x {
+    color: #dba9ff;
+    text-shadow: 0 0 18px rgba(168, 85, 247, 0.8);
+}
+
+.tic-tac-toe-board button.cell-o {
+    color: #62efea;
+    text-shadow: 0 0 18px rgba(38, 217, 218, 0.72);
+}
+
+.tic-tac-toe-board button.winning-cell {
+    border-color: #62efea;
+    background: rgba(38, 217, 218, 0.12);
+}
+
+.tic-tac-toe-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.tic-tac-toe-actions .secondary-button {
+    width: 44px;
+    font-size: 18px;
+}
+
+.primary-button:hover,
+.profile-button:hover,
+.tic-tac-toe-board button:hover {
+    transform: translateY(-2px);
+}
+
+.primary-button:active,
+.secondary-button:active,
+.profile-button:active,
+.tic-tac-toe-board button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.snake-panel,
+.tic-tac-toe-panel,
+.registration-card {
+    backdrop-filter: blur(14px);
+}
+
+@keyframes nexusPulse {
+    0%, 100% { box-shadow: 0 0 22px rgba(168, 85, 247, 0.22); }
+    50% { box-shadow: 0 0 34px rgba(168, 85, 247, 0.38); }
+}
+
+.brand-mark {
+    animation: nexusPulse 3.6s ease-in-out infinite;
+}
+
+@media (max-width: 800px) {
+    .tic-tac-toe-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .tic-tac-toe-scores {
+        width: 100%;
+    }
+
+    .tic-tac-toe-scores div {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .shop-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .community-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .community-sidebar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .shop-hero-art {
+        right: -40px;
+        opacity: 0.65;
+    }
+}
+
+@media (max-width: 560px) {
+    .navbar {
+        height: 78px;
+    }
+
+    .brand {
+        gap: 8px;
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+
+    .brand-mark {
+        width: 38px;
+        height: 38px;
+    }
+
+    .game-header-actions {
+        gap: 8px;
+    }
+
+    .back-link {
+        max-width: 62px;
+        line-height: 1.3;
+        text-align: right;
+    }
+
+    .profile-button {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .profile-dropdown {
+        width: min(210px, calc(100vw - 32px));
+    }
+
+    .tic-tac-toe-main {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .tic-tac-toe-panel {
+        padding: 16px 12px;
+    }
+
+    .tic-tac-toe-scores span {
+        font-size: 7px;
+    }
+
+    .tic-tac-toe-board {
+        gap: 6px;
+    }
+
+    .snake-main {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .registration-main {
+        padding: 20px 16px 40px;
+    }
+
+    .registration-card {
+        padding: 26px 22px;
+    }
+
+    .snake-panel {
+        padding: 16px 12px;
+    }
+
+    .snake-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .snake-title-row {
+        gap: 6px;
+    }
+
+    .snake-title-gif {
+        width: 40px;
+        height: 34px;
+    }
+
+    .snake-scores {
+        width: 100%;
+    }
+
+    .snake-scores div {
+        flex: 1;
+    }
+
+    .game-controls {
+        flex-wrap: wrap;
+    }
+
+    .game-controls p {
+        flex-basis: 100%;
+        line-height: 2;
+    }
+
+    .touch-controls {
+        display: flex;
+    }
+
+    .subpage-main {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .shop-hero {
+        min-height: 320px;
+        padding: 30px 24px;
+    }
+
+    .shop-hero > div:first-child {
+        position: relative;
+        z-index: 1;
+    }
+
+    .shop-hero-art {
+        width: 190px;
+        height: 190px;
+        right: -78px;
+        opacity: 0.4;
+    }
+
+    .shop-hero-art span {
+        font-size: 24px;
+    }
+
+    .shop-heading {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .shop-search {
+        width: 100%;
+    }
+
+    .shop-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-button {
+        padding: 7px;
+        font-size: 9px;
+    }
+
+    .community-banner {
+        padding: 28px 22px;
+    }
+
+    .community-stats {
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    .community-sidebar {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

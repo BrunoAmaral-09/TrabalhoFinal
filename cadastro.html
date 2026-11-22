@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | NEXUS</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="cadastro.js" defer></script>
+    <link rel="icon" href="animacao.gif" type="image/gif">
+</head>
+<body class="registration-page">
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <header class="navbar">
+        <a class="brand" href="index.html" aria-label="Voltar ao inicio dos jogos">
+            <img class="brand-mark" src="animacao.gif" alt="Icone animado da NEXUS">
+            <span>NEXUS</span>
+        </a>
+        
+    </header>
+
+    <main class="registration-main">
+        <section class="registration-card">
+            <img class="registration-snake" src="snake-animation.gif" alt="Cobrinha neon animada">
+            <span class="eyebrow">ACESSO AO JOGO</span>
+            <h1 id="auth-title">Entre na NEXUS</h1>
+            <p class="registration-intro" id="auth-description">Entre com sua conta para jogar e salvar seu recorde.</p>
+
+            <div class="auth-tabs" role="tablist" aria-label="Acesso à conta">
+                <button class="auth-tab active" id="login-tab" type="button" role="tab" aria-selected="true" aria-controls="login-panel">Fazer login</button>
+                <button class="auth-tab" id="register-tab" type="button" role="tab" aria-selected="false" aria-controls="register-panel">Criar cadastro</button>
+            </div>
+
+            <section class="auth-panel" id="login-panel" role="tabpanel" aria-labelledby="login-tab">
+                <form class="registration-form" id="login-form">
+                    <label for="login-nickname">Nickname gamer</label>
+                    <input id="login-nickname" name="nickname" type="text" maxlength="20" autocomplete="username" placeholder="Seu nome no jogo" required>
+                    <label for="login-password">Senha</label>
+                    <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Sua senha" required>
+                    <button class="primary-button dialog-confirm" type="submit">Entrar e jogar</button>
+                </form>
+            </section>
+
+            <section class="auth-panel" id="register-panel" role="tabpanel" aria-labelledby="register-tab" hidden>
+                <form class="registration-form" id="register-form">
+                    <label for="player-name">Seu nome</label>
+                    <input id="player-name" name="name" type="text" maxlength="40" autocomplete="name" placeholder="Como podemos te chamar?" required>
+                    <label for="player-nickname">Nickname gamer</label>
+                    <input id="player-nickname" name="nickname" type="text" maxlength="20" autocomplete="username" placeholder="Crie seu nome no jogo" required>
+                    <label for="register-password">Crie uma senha</label>
+                    <input id="register-password" name="password" type="password" minlength="6" autocomplete="new-password" placeholder="Pelo menos 6 caracteres" required>
+                    <button class="primary-button dialog-confirm" type="submit">Criar conta e jogar</button>
+                </form>
+            </section>
+
+            <p class="registration-error" id="auth-error" role="alert" hidden></p>
+            <p class="registration-note">Conta de demonstração salva somente neste navegador.</p>
+        </section>
+    </main>
+</body>
+</html>

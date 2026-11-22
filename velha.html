@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha | Nexus Gaming</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="velha.js" defer></script>
+    <script src="perfil.js" defer></script>
+    <link rel="icon" href="animacao.gif" type="image/gif">
+</head>
+<body class="tic-tac-toe-page">
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <header class="navbar snake-navbar">
+        <a class="brand" href="index.html" aria-label="Voltar ao Nexus Gaming">
+            <img class="brand-mark" src="animacao.gif" alt="Icone animado da NEXUS">
+            <span>NEXUS</span>
+        </a>
+        <div class="game-header-actions">
+            <a class="back-link" href="index.html">← Voltar</a>
+            <div class="profile-menu" id="profile-menu">
+                <button class="profile-button" id="profile-button" type="button" aria-expanded="false" aria-label="Abrir perfil">
+                    <span id="profile-initial">?</span>
+                </button>
+                <div class="profile-dropdown" id="profile-dropdown" hidden>
+                    <strong id="profile-name">Visitante</strong>
+                    <span id="profile-nickname">Entre para jogar</span>
+                    <button type="button" id="profile-action">Entrar</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="tic-tac-toe-main">
+        <section class="tic-tac-toe-panel">
+            <div class="tic-tac-toe-heading">
+                <div>
+                    <span class="eyebrow">DUELARCADE</span>
+                    <h1>Jogo da Velha</h1>
+                    <p class="player-welcome">Carregando jogador...</p>
+                </div>
+                <div class="tic-tac-toe-scores">
+                    <div><span>JOGADOR X</span><strong id="score-x">0</strong></div>
+                    <div><span>EMPATES</span><strong id="score-draw">0</strong></div>
+                    <div><span>JOGADOR O</span><strong id="score-o">0</strong></div>
+                </div>
+            </div>
+
+            <p class="tic-tac-toe-status" id="game-status" aria-live="polite">Vez do jogador X</p>
+
+            <div class="tic-tac-toe-board" id="game-board" role="grid" aria-label="Tabuleiro do jogo da velha">
+                <button type="button" role="gridcell" data-cell="0" aria-label="Casa 1"></button>
+                <button type="button" role="gridcell" data-cell="1" aria-label="Casa 2"></button>
+                <button type="button" role="gridcell" data-cell="2" aria-label="Casa 3"></button>
+                <button type="button" role="gridcell" data-cell="3" aria-label="Casa 4"></button>
+                <button type="button" role="gridcell" data-cell="4" aria-label="Casa 5"></button>
+                <button type="button" role="gridcell" data-cell="5" aria-label="Casa 6"></button>
+                <button type="button" role="gridcell" data-cell="6" aria-label="Casa 7"></button>
+                <button type="button" role="gridcell" data-cell="7" aria-label="Casa 8"></button>
+                <button type="button" role="gridcell" data-cell="8" aria-label="Casa 9"></button>
+            </div>
+
+            <div class="tic-tac-toe-actions">
+                <button class="primary-button" id="new-round-button" type="button">Nova rodada</button>
+                <button class="secondary-button" id="reset-score-button" type="button" aria-label="Zerar placar">↻</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

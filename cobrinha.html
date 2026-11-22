@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Rush: Cobrinha | Nexus Gaming</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="cobrinha.js" defer></script>
+    <script src="perfil.js" defer></script>
+    <link rel="icon" href="animacao.gif" type="image/gif">
+</head>
+<body class="snake-page">
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <header class="navbar snake-navbar">
+        <a class="brand" href="index.html" aria-label="Voltar ao Cyber Rush">
+            <img class="brand-mark" src="animacao.gif" alt="Icone animado da NEXUS">
+            <span>NEXUS</span>
+        </a>
+        <div class="game-header-actions">
+            <a class="back-link" href="index.html">← Voltar</a>
+            <div class="profile-menu" id="profile-menu">
+                <button class="profile-button" id="profile-button" type="button" aria-expanded="false" aria-label="Abrir perfil">
+                    <span id="profile-initial">?</span>
+                </button>
+                <div class="profile-dropdown" id="profile-dropdown" hidden>
+                    <strong id="profile-name">Visitante</strong>
+                    <span id="profile-nickname">Entre para jogar</span>
+                    <button type="button" id="profile-action">Entrar</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="snake-main">
+        <section class="snake-panel">
+            <div class="snake-heading">
+                <div>
+                    <span class="eyebrow">CYBER RUSH ARCADE</span>
+                    <div class="snake-title-row">
+                        <h1>Jogo da Cobrinha</h1>
+                        <img class="snake-title-gif" src="snake-animation.gif" alt="Cobrinha neon animada">
+                    </div>
+                    <p class="player-welcome">Carregando jogador...</p>
+                </div>
+                <div class="snake-scores">
+                    <div><span>PONTOS</span><strong id="score">0</strong></div>
+                    <div><span>RECORDE</span><strong id="best-score">0</strong></div>
+                </div>
+            </div>
+
+            <div class="canvas-wrap">
+                <canvas id="snake-canvas" width="600" height="400" aria-label="Jogo da cobrinha. Use as setas ou WASD para controlar."></canvas>
+                <div class="game-overlay" id="game-overlay">
+                    <img class="overlay-icon" src="snake-animation.gif" alt="">
+                    <h2 id="overlay-title">Pronto para jogar?</h2>
+                    <p id="overlay-message">Pegue os cristais neon e nao bata nas paredes nem em voce mesmo.</p>
+                    <button class="primary-button" id="start-button" type="button">Iniciar jogo</button>
+                </div>
+            </div>
+
+            <div class="game-controls">
+                <p>Controles: <kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd> ou <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd></p>
+                <button class="secondary-button pause-button" id="pause-button" type="button" disabled>Pausar</button>
+                <button class="secondary-button restart-button" id="restart-button" type="button">Reiniciar</button>
+            </div>
+
+            <div class="touch-controls" aria-label="Controles touch">
+                <button type="button" data-direction="up" aria-label="Cima">↑</button>
+                <div>
+                    <button type="button" data-direction="left" aria-label="Esquerda">←</button>
+                    <button type="button" data-direction="down" aria-label="Baixo">↓</button>
+                    <button type="button" data-direction="right" aria-label="Direita">→</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

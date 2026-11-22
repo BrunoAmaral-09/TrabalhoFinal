@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Gaming</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="script.js" defer></script>
+    <script src="perfil.js" defer></script>
+    <link rel="icon" href="animacao.gif" type="image/gif">
+</head>
+<body>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <header class="navbar">
+        <a class="brand" href="index.html" aria-label="Nexus Gaming">
+            <img class="brand-mark" src="animacao.gif" alt="Icone animado da NEXUS">
+            <span>NEXUS</span>
+        </a>
+        <div class="profile-menu" id="profile-menu">
+            <button class="profile-button" id="profile-button" type="button" aria-expanded="false" aria-label="Abrir perfil">
+                <span id="profile-initial">?</span>
+            </button>
+            <div class="profile-dropdown" id="profile-dropdown" hidden>
+                <strong id="profile-name">Visitante</strong>
+                <span id="profile-nickname">Entre para jogar</span>
+                <button type="button" id="profile-action">Entrar</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <span class="eyebrow">EM DESTAQUE</span>
+                <h1>Jogo<br>Cobrinha</h1>
+                <p>Corra pelas ruas neon, supere seus limites e domine a noite.</p>
+                <div class="hero-actions">
+                    <button class="primary-button" type="button" data-play="Cyber Rush" data-game="cobrinha.html">Jogar agora</button>
+                    <button class="secondary-button favorite-button" type="button" aria-label="Adicionar Cyber Rush aos favoritos" aria-pressed="false">♡</button>
+                </div>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+                <div class="speed-line line-one"></div>
+                <div class="speed-line line-two"></div>
+                <div class="cyber-sphere">
+                    <div class="sphere-ring"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="games-section" aria-labelledby="games-title">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">ARCADE NEXUS</span>
+                    <h2 id="games-title">Escolha seu jogo</h2>
+                </div>
+            </div>
+            <div class="game-grid">
+                <article class="game-card card-purple">
+                    <div class="card-art">
+                        <span class="game-tag">Arcade</span>
+                        <span class="game-logo">COBRINHA</span>
+                    </div>
+                    <div class="card-info">
+                        <div>
+                            <h3>Jogo da Cobrinha</h3>
+                            <p>Desvie e alcance seu recorde</p>
+                        </div>
+                        <button type="button" data-play="Cobrinha" data-game="cobrinha.html" aria-label="Jogar Cobrinha">›</button>
+                    </div>
+                </article>
+                <article class="game-card card-cyan">
+                    <div class="card-art">
+                        <span class="game-tag">2 jogadores</span>
+                        <span class="game-logo">JOGO DA VELHA</span>
+                    </div>
+                    <div class="card-info">
+                        <div>
+                            <h3>Jogo da Velha</h3>
+                            <p>Jogue X contra O no mesmo aparelho</p>
+                        </div>
+                        <button type="button" data-play="Jogo da Velha" data-game="velha.html" aria-label="Jogar Jogo da Velha">›</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
